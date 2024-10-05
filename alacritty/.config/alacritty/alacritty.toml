@@ -23,3 +23,5 @@ style = "Italic"
 [font.normal]
 family = "Hack Nerd Font Mono"
 style = "Regular"
+
+import = ["./tokyo-night.toml"]
