@@ -26,7 +26,7 @@ set number
 set relativenumber
 
 " Highlight the current line
-set cursorline
+" set cursorline
 
 " Enable syntax highlighting
 syntax enable
