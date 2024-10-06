@@ -1,0 +1,32 @@
+# Vim/Neovim swap files
+*.swp
+*.swo
+*.swn
+*.tmp
+.*.swp
+.*.swo
+.*.swn
+
+# Vim/Neovim backup files
+*~
+*.bak
+*.backup
+
+# Vim undo files
+*.un~
+
+# Vim session files
+Session.vim
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
