@@ -1,0 +1,15 @@
+[user]
+	name = Nikita Sementsov
+	email = sementcov.nikita@gmail.com
+
+[push]
+	default = current
+[alias]
+	coa = !git add -A && git commit -m
+	ch = checkout
+	co = checkout
+	com = commit
+	br = branch
+	st = status
+	lga = !git log --graph --all
+	lag = !git log --graph --all
