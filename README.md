@@ -4,3 +4,9 @@
 3. Install GNU stow
 2. Use GNU stow to create symlinks to the configs.
     `stow nvim alacritty tmux`
+
+
+## TODO:
+* chrome extensions
+* automate installation
+* asdf
