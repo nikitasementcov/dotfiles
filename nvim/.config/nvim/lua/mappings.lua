@@ -32,6 +32,9 @@ end, { desc = "Format (LSP)" })
 map("n", "<leader>fm", ":FormatWrite<CR>", { desc = "Format and write" })
 map("n", "<leader>f,", ":%s/\\r//g<CR>", { desc = "Remove Win linebreaks (CR)" })
 
+-- Splits
+map("n", "|", "<cmd>:vsplit <CR>", { desc = "Vertical Split" })
+
 -- Resize splits
 map("n", "<C-w>h", ":vertical resize -5<CR>", { desc = "Resize window left" })
 map("n", "<C-w>l", ":vertical resize +5<CR>", { desc = "Resize window right" })
