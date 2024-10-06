@@ -1,8 +1,6 @@
-# Install chocolatey - https://chocolatey.org/install
-
 # Better install manually:
 # choco install conemu -y
-# choso install alacritty -y
+# choco install alacritty -y
 # choco install googlechrome -y
 # choco install driverbooster -y
 
@@ -36,6 +34,3 @@ choco install -y \
   jre8 \
   python2 \
   python3 \
-
-# Install nerd font (for example Hack)
-# Use powertoys to remap casplock to ctrl
