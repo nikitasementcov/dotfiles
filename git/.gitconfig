@@ -6,6 +6,7 @@
 [push]
 	default = current
 [alias]
+  # check zsh git plugin aliases: https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index
 	coa = !git add -A && git commit -m
 	ch = checkout
 	co = checkout
