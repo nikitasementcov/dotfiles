@@ -125,3 +125,5 @@ end, { desc = "Toggle horizontal term" })
 map({ "n", "t" }, "<C-|>", function()
   require("nvterm.terminal").toggle "vertical"
 end, { desc = "Toggle vertical term" })
+
+-- map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
