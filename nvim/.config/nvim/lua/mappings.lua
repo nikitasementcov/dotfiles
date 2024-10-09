@@ -24,10 +24,16 @@ map("n", "<leader>Q", function()
   vim.diagnostic.setloclist()
 end, { desc = "Diagnostic setloclist" })
 
+-- LSP Code Actions
+map("n", "<leader>la", function()
+  vim.lsp.buf.code_action()
+end, { desc = "LSP code action" })
+
 -- LSP formatting (overwrite formatting)
 map("n", "<leader>fM", function()
   vim.lsp.buf.format { async = true }
 end, { desc = "Format (LSP)" })
+
 -- Formatting
 map("n", "<leader>fm", ":FormatWrite<CR>", { desc = "Format and write" })
 map("n", "<leader>f,", ":%s/\\r//g<CR>", { desc = "Remove Win linebreaks (CR)" })
