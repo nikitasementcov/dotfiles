@@ -126,4 +126,18 @@ map({ "n", "t" }, "<C-|>", function()
   require("nvterm.terminal").toggle "vertical"
 end, { desc = "Toggle vertical term" })
 
+-- Oil
 -- map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- Telescope
+map("n", "<leader>ft", function()
+  require("nvchad.themes").open()
+end, { desc = "Find theme" })
+
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
+map(
+  "n",
+  "<leader>fa",
+  "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
+  { desc = "Find all files" }
+)
