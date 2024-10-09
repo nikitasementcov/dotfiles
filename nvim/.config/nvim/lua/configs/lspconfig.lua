@@ -15,11 +15,74 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
+local function on_attach(client, bufnr)
+  local buf_map = function(bufnr, mode, lhs, rhs, opts)
+    opts = vim.tbl_extend("keep", opts or {}, {
+      noremap = true,
+      silent = true,
+    })
+    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
+  end
+
+  -- Rename symbol
+  buf_map(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
+
+  -- Organize imports
+  buf_map(bufnr, "n", "<leader>oi", "<cmd>TSLspOrganize<CR>")
+
+  -- Rename file and update imports
+  buf_map(bufnr, "n", "<leader>rf", "<cmd>TSLspRenameFile<CR>")
+
+  -- Add missing imports
+  buf_map(bufnr, "n", "<leader>mi", "<cmd>TSLspImportAll<CR>")
+end
+
+lspconfig.ts_ls.setup {
+  on_attach = on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+}
+
+-- local function rename_file()
+--   local source_file, target_file
+--
+--   vim.ui.input({
+--     prompt = "Source : ",
+--     completion = "file",
+--     default = vim.api.nvim_buf_get_name(0),
+--   }, function(input)
+--     source_file = input
+--   end)
+--   vim.ui.input({
+--     prompt = "Target : ",
+--     completion = "file",
+--     default = source_file,
+--   }, function(input)
+--     target_file = input
+--   end)
+--
+--   local params = {
+--     command = "_typescript.applyRenameFile",
+--     arguments = {
+--       {
+--         sourceUri = source_file,
+--         targetUri = target_file,
+--       },
+--     },
+--     title = "",
+--   }
+--
+--   vim.lsp.util.rename(source_file, target_file)
+--   vim.lsp.buf.execute_command(params)
+-- end
+--
+-- require("lspconfig").ts_ls.setup {
+--   commands = {
+--     RenameFile = {
+--       rename_file,
+--       description = "Rename File",
+--     },
+--   },
 -- }
 
 lspconfig.emmet_language_server.setup {

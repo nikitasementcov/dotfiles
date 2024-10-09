@@ -29,6 +29,7 @@ map("n", "<leader>la", function()
   vim.lsp.buf.code_action()
 end, { desc = "LSP code action" })
 
+map("n", "<leader>rf", "<cmd>TSLspRenameFile<CR>", { noremap = true, silent = true })
 -- LSP formatting (overwrite formatting)
 map("n", "<leader>fM", function()
   vim.lsp.buf.format { async = true }

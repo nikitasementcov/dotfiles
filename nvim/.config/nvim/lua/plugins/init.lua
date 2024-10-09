@@ -64,4 +64,40 @@ return {
       return require "configs.formatter"
     end,
   },
+  {
+    "jose-elias-alvarez/typescript.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "neovim/nvim-lspconfig",
+    },
+    config = function()
+      require("typescript").setup {
+        disable_commands = false, -- Prevents the plugin from creating Vim commands
+        debug = false, -- Enable debug logging for commands
+        server = { -- Pass options to lspconfig's setup method
+          on_attach = function(client, bufnr)
+            local opts = { noremap = true, silent = true }
+
+            -- Rename symbol
+            vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", opts)
+
+            -- Organize imports
+            vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>oi", ":TypescriptOrganizeImports<CR>", opts)
+
+            -- Rename file and update imports
+            vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rf", ":TypescriptRenameFile<CR>", opts)
+
+            -- Add missing imports
+            vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>mi", ":TypescriptAddMissingImports<CR>", opts)
+
+            -- Remove unused imports
+            vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ru", ":TypescriptRemoveUnused<CR>", opts)
+
+            -- Additional keybindings can be added here
+          end,
+          capabilities = require("cmp_nvim_lsp").default_capabilities(),
+        },
+      }
+    end,
+  },
 }
