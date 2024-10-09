@@ -6,6 +6,7 @@
 local M = {}
 
 M.base46 = {
+  lazy = true,
   theme = "tokyonight",
 }
 
