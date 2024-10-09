@@ -120,9 +120,15 @@ end, { desc = "Toggle floating term" })
 map({ "n", "t" }, "<C-\\>", function()
   require("nvterm.terminal").toggle "horizontal"
 end, { desc = "Toggle horizontal term" })
+map({ "n", "t" }, "<leader>th", function()
+  require("nvterm.terminal").toggle "horizontal"
+end, { desc = "Toggle horizontal term" })
 
 -- Toggle vertical term
 map({ "n", "t" }, "<C-|>", function()
+  require("nvterm.terminal").toggle "vertical"
+end, { desc = "Toggle vertical term" })
+map({ "n", "t" }, "<leader>tv", function()
   require("nvterm.terminal").toggle "vertical"
 end, { desc = "Toggle vertical term" })
 
