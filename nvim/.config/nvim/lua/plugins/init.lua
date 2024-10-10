@@ -73,4 +73,14 @@ return {
   --   dependencies = { { "echasnovski/mini.icons", opts = {} } },
   --   -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
   -- },
+  -- {
+  --   "antosha417/nvim-lsp-file-operations",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-tree/nvim-tree.lua",
+  --   },
+  --   config = function()
+  --     require("lsp-file-operations").setup()
+  --   end,
+  -- },
 }
