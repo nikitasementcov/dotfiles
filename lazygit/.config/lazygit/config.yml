@@ -7,3 +7,7 @@ gui:
       - bold
 
   nerdFontsVersion: "3"
+
+keybinding:
+  universal:
+    optionMenu-alt1: x
