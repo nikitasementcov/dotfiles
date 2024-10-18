@@ -15,6 +15,10 @@ BREW_PREFIX=$(brew --prefix)
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
+brew install --cask google-chrome
+brew install --cask alacritty
+brew install asdf
+
 brew install moreutils
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
@@ -35,11 +39,13 @@ brew install gnupg
 
 # Install more recent versions of some macOS tools.
 brew install vim
+brew install neovim
 brew install grep
 brew install openssh
 brew install screen
 brew install gmp
 brew install wget
+brew install lazygit
 
 # Install font tools.
 # brew tap bramstein/webfonttools
@@ -66,6 +72,11 @@ brew install ssh-copy-id
 brew install tree
 brew install vbindiff
 brew install zopfli
+
+
+brew install --cask telegram
+brew install --cask font-hack-nerd-font
+
 
 # Remove outdated versions from the cellar.
 brew cleanup
