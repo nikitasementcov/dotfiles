@@ -39,6 +39,7 @@ brew install gnupg
 
 # Install more recent versions of some macOS tools.
 brew install vim
+brew install tmux
 brew install neovim
 brew install grep
 brew install openssh
