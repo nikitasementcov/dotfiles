@@ -12,6 +12,7 @@
 7. Generate ssh keys
 
 ## TODO:
+* automate installation of zsh plugins
 * asdf
 * run asdf before brew.sh (add it to the steps above)
 * chrome extensions
