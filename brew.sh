@@ -26,6 +26,10 @@ brew install gnu-sed
 # Install a modern version of Bash.
 brew install bash
 brew install bash-completion2
+brew install zsh
+
+sh -c "echo $(which zsh) >> /etc/shells"
+chsh -s $(which zsh)
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -47,6 +51,8 @@ brew install screen
 brew install gmp
 brew install wget
 brew install lazygit
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
 # Install font tools.
 # brew tap bramstein/webfonttools
