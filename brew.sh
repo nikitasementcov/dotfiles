@@ -83,6 +83,7 @@ brew install zopfli
 
 brew install --cask telegram
 brew install --cask font-hack-nerd-font
+brew install --cask notion
 
 
 # Remove outdated versions from the cellar.
