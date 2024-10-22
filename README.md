@@ -14,6 +14,7 @@
 ## TODO:
 * automate installation of zsh plugins
 * asdf
+* install tmux plugin manager (tpm)[https://github.com/tmux-plugins/tpm] ??
 * run asdf before brew.sh (add it to the steps above)
 * chrome extensions
 * automate installation
