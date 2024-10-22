@@ -120,8 +120,11 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lg='lazygit'
 
-# Start keychain and add SSH key
-eval `keychain --eval --agents ssh id_rsa`
+case $OSTYPE in
+    linux*)
+        # Start keychain and add SSH key
+        eval `keychain --eval --agents ssh id_rsa`
+esac
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
