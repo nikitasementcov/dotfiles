@@ -86,6 +86,8 @@ brew install --cask font-hack-nerd-font
 brew install --cask notion
 brew install --cask zoom
 brew install --cask spotify
+brew install --cask xnconvert
+brew install --cask transnomino
 
 # Remove outdated versions from the cellar.
 brew cleanup
