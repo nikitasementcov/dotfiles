@@ -6,10 +6,10 @@ sudo defaults write /Library/Preferences/com.apple.driver.AppleBluetoothMultitou
 
 # Move Dock to the left
 defaults write com.apple.dock orientation -string "left"
-
+# Hide dock
+defaults write com.apple.dock autohide -bool true
 
 # TODO:
-# hide dock
 # scroll direction on trackpad
 
 # Restarting
