@@ -8,12 +8,15 @@ sudo defaults write /Library/Preferences/com.apple.driver.AppleBluetoothMultitou
 defaults write com.apple.dock orientation -string "left"
 # Hide dock
 defaults write com.apple.dock autohide -bool true
+# Clean dock items
+defaults write com.apple.dock persistent-apps -array
 
 # Remap capslock to command key
 hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E7}]}'
 
 # TODO:
 # scroll direction on trackpad
+#
 
 # Restarting
 killall SystemUIServer
