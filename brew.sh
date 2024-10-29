@@ -88,6 +88,8 @@ brew install --cask zoom
 brew install --cask spotify
 brew install --cask xnconvert
 brew install --cask transnomino
+brew install --cask raycast
+# brew install --cask karabiner-elements
 
 # Remove outdated versions from the cellar.
 brew cleanup
