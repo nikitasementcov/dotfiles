@@ -90,6 +90,7 @@ brew install --cask xnconvert
 brew install --cask transnomino
 brew install --cask raycast
 brew install --cask karabiner-elements
+brew install --cask postman
 
 # Remove outdated versions from the cellar.
 brew cleanup
