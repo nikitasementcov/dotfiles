@@ -17,7 +17,6 @@ ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
 brew install --cask google-chrome
 brew install --cask alacritty
-brew install asdf
 
 brew install moreutils
 brew install findutils
