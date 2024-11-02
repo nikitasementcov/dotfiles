@@ -45,6 +45,7 @@ brew install vim
 brew install tmux
 brew install neovim
 brew install grep
+brew install ripgrep
 brew install openssh
 brew install screen
 brew install gmp
