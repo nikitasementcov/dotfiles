@@ -26,6 +26,7 @@ brew install gnu-sed
 brew install bash
 brew install bash-completion2
 brew install zsh
+brew install dockutil
 
 sh -c "echo $(which zsh) >> /etc/shells"
 chsh -s $(which zsh)
