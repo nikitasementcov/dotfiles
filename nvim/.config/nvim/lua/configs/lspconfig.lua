@@ -3,7 +3,7 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
-local servers = { "html", "cssls", "eslint", "ts_ls", "clangd" }
+local servers = { "html", "cssls", "eslint", "ts_ls", "clangd", "vue-language-server" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -34,7 +34,7 @@ lspconfig.emmet_language_server.setup {
     "scss",
     "pug",
     "typescriptreact",
-    "vue-language-server",
+    "vue",
   },
   -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
   -- **Note:** only the options listed in the table are supported.
