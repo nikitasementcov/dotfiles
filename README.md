@@ -10,6 +10,7 @@
 5. Use GNU stow to create symlinks to the configs `stow nvim alacritty tmux`
 6. Install chrome extensions like 1password
 7. Generate ssh keys
+8. Install apps manually from a store (e.g. Things 3)
 
 ## TODO:
 * automate installation of zsh plugins
