@@ -28,6 +28,9 @@ defaults write com.apple.touchbar.agent PresentationModeGlobal -string "function
 # Use F1, F2, etc. as standard function keys (for MacBook with Touch Bar)
 defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
+# Disable minimizing windows into the application icon
+defaults write com.apple.dock minimize-to-application -bool false
+
 # Restarting
 killall SystemUIServer
 killall Dock
