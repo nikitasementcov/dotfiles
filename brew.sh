@@ -53,6 +53,8 @@ brew install screen
 brew install gmp
 brew install wget
 brew install lazygit
+brew install fzf
+brew install zsh-syntax-highlighting
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
