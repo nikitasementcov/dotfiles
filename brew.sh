@@ -99,6 +99,7 @@ brew install --cask raycast
 brew install --cask karabiner-elements
 brew install --cask postman
 brew install --cask nikitabobko/tap/aerospace
+brew install --cask visual-studio-code
 
 # Remove outdated versions from the cellar.
 brew cleanup
