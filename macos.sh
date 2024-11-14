@@ -34,6 +34,9 @@ defaults write com.apple.dock minimize-to-application -bool false
 # Set the Globe/Fn key to "Do Nothing"
 defaults write com.apple.HIToolbox AppleFnUsageType -int 0
 
+# Set preferred languages to English (US) and Russian, removing all others
+defaults write NSGlobalDomain AppleLanguages -array "en-US" "ru"
+
 # Restarting
 killall SystemUIServer
 killall Dock
