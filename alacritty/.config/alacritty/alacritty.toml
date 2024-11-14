@@ -28,6 +28,10 @@ style = "Italic"
 family = "Hack Nerd Font Mono"
 style = "Regular"
 
+# Powerlevel10k font (I don't use it)
+# [font.normal]
+# family = "MesloLGS NF"
+
 # import = ["~/.config/alacritty/tokyo-night.toml"] # copy and replace inline colors if import doesn't work
 
 [colors.bright]
