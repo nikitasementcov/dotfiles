@@ -1,154 +1,167 @@
 {
-    "profiles": [
-        {
-            "complex_modifications": {
-                "rules": [
-                    {
-                        "description": "Remap ± to ~",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 1296,
-                                                "vendor_id": 1204
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": { "key_code": "non_us_backslash" },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Remap § (section symbol) to ` (backtick)",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 1296,
-                                                "vendor_id": 1204
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": { "key_code": "non_us_backslash" },
-                                "to": { "key_code": "grave_accent_and_tilde" },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Remap ` (backtick) to § (section symbol)",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": { "key_code": "grave_accent_and_tilde" },
-                                "to": [{ "key_code": "non_us_backslash" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Remap Command+Shift to Control+Space",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_shift",
-                                    "modifiers": { "mandatory": ["left_command"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "spacebar",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "description": "Change caps_lock to command+control+option+shift.",
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_shift",
-                                        "modifiers": ["left_command", "left_control", "left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "devices": [
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
+  "profiles": [
+    {
+      "complex_modifications": {
+        "rules": [
+          {
+            "description": "Remap ± to ~",
+            "enabled": false,
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
                         "product_id": 1296,
                         "vendor_id": 1204
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "caps_lock" },
-                            "to": [{ "key_code": "left_control" }]
-                        },
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_option" }]
-                        },
-                        {
-                            "from": { "key_code": "left_option" },
-                            "to": [{ "key_code": "left_command" }]
-                        }
-                    ]
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": { "key_code": "non_us_backslash" },
+                "to": [
+                  {
+                    "key_code": "grave_accent_and_tilde",
+                    "modifiers": ["shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Remap § (section symbol) to ` (backtick)",
+            "enabled": false,
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "identifiers": [
+                      {
+                        "product_id": 1296,
+                        "vendor_id": 1204
+                      }
+                    ],
+                    "type": "device_if"
+                  }
+                ],
+                "from": { "key_code": "non_us_backslash" },
+                "to": { "key_code": "grave_accent_and_tilde" },
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Remap ` (backtick) to § (section symbol)",
+            "enabled": false,
+            "manipulators": [
+              {
+                "from": { "key_code": "grave_accent_and_tilde" },
+                "to": [{ "key_code": "non_us_backslash" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Remap Command+Shift to Control+Space",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "left_shift",
+                  "modifiers": { "mandatory": ["left_command"] }
                 },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 832,
-                        "vendor_id": 1452
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
-                            "to": [{ "key_code": "left_control" }]
-                        },
-                        {
-                            "from": { "key_code": "left_control" },
-                            "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
-                        },
-                        {
-                            "from": { "key_code": "caps_lock" },
-                            "to": [{ "key_code": "left_control" }]
-                        }
-                    ]
-                }
-            ],
-            "name": "Default profile",
-            "selected": true,
-            "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
+                "to": [
+                  {
+                    "key_code": "spacebar",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "enabled": false,
+            "manipulators": [
+              {
+                "description": "Change caps_lock to command+control+option+shift.",
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "left_shift",
+                    "modifiers": ["left_command", "left_control", "left_option"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          }
+        ]
+      },
+      "devices": [
+        {
+          "identifiers": {
+            "is_keyboard": true,
+            "product_id": 1296,
+            "vendor_id": 1204
+          },
+          "simple_modifications": [
+            {
+              "from": { "key_code": "caps_lock" },
+              "to": [{ "key_code": "left_control" }]
+            },
+            {
+              "from": { "key_code": "left_command" },
+              "to": [{ "key_code": "left_option" }]
+            },
+            {
+              "from": { "key_code": "left_option" },
+              "to": [{ "key_code": "left_command" }]
+            }
+          ]
+        },
+        {
+          "identifiers": {
+            "is_keyboard": true,
+            "vendor_id": 1452
+          },
+          "simple_modifications": [
+            {
+              "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
+              "to": [{ "key_code": "left_control" }]
+            },
+            {
+              "from": { "key_code": "caps_lock" },
+              "to": [{ "key_code": "left_control" }]
+            },
+            {
+              "from": { "key_code": "left_control" },
+              "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+            }
+          ]
         }
-    ]
+      ],
+      "name": "Default profile",
+      "selected": true,
+      "virtual_hid_keyboard": { "keyboard_type_v2": "iso" },
+      "simple_modifications": [
+        {
+          "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
+          "to": [{ "key_code": "left_control" }]
+        },
+        {
+          "from": { "key_code": "caps_lock" },
+          "to": [{ "key_code": "left_control" }]
+        },
+        {
+          "from": { "key_code": "left_control" },
+          "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+        }
+      ]
+    }
+  ]
 }
