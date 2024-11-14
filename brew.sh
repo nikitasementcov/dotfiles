@@ -82,6 +82,9 @@ brew install tree
 brew install vbindiff
 brew install zopfli
 
+# brew install --cask microsoft-teams
+# brew install --cask slack
+# brew install --cask discord
 
 brew install --cask telegram
 brew install --cask font-hack-nerd-font
