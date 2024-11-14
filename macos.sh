@@ -13,10 +13,10 @@ defaults write com.apple.dock autohide -bool true
 # Clean dock items
 defaults write com.apple.dock persistent-apps -array
 
-dockutil --add "/Applications/Alacritty.app" --no-restart
-dockutil --add "/Applications/Notion.app" --no-restart
-dockutil --add "/Applications/Notion Calendar.app" --no-restart
-dockutil --add "/Applications/Google Chrome.app" --no-restart
+dockutil --add "/Applications/Alacritty.app" --no-restart | true
+dockutil --add "/Applications/Notion.app" --no-restart | true
+dockutil --add "/Applications/Notion Calendar.app" --no-restart | true
+dockutil --add "/Applications/Google Chrome.app" --no-restart | true
 
 # Remap capslock to command key (one of the way to do that without karabiner)
 # hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E7}]}' | true
