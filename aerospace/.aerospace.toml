@@ -203,14 +203,23 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+# run osascript -e 'id of app "Application Name"' to get app-id
 [[on-window-detected]]
 if.app-id = 'com.alacritty'
-run = ['move-node-to-workspace 3']
-
-[[on-window-detected]]
-if.app-id = 'com.google.Chrome'
 run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = ['move-node-to-workspace s']
+run = ['move-node-to-workspace S']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = ['move-node-to-workspace M']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = ['move-node-to-workspace M']
