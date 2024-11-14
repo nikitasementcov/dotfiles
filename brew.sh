@@ -81,6 +81,7 @@ brew install ssh-copy-id
 brew install tree
 brew install vbindiff
 brew install zopfli
+brew install bottom # btm
 
 # brew install --cask microsoft-teams
 # brew install --cask slack
