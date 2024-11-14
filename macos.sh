@@ -31,6 +31,9 @@ defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 # Disable minimizing windows into the application icon
 defaults write com.apple.dock minimize-to-application -bool false
 
+# Set the Globe/Fn key to "Do Nothing"
+defaults write com.apple.HIToolbox AppleFnUsageType -int 0
+
 # Restarting
 killall SystemUIServer
 killall Dock
