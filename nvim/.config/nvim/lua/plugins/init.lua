@@ -25,14 +25,35 @@ return {
     },
     -- keymaps in mappings config
   },
-
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = function(_, opts)
+      -- Extend the default options with custom settings
+      opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
+        prompt_prefix = "🔍 ",
+        path_display = { "smart" },
+      })
+      opts.pickers = {
+        live_grep = {
+          file_ignore_patterns = { "node_modules", ".git" },
+          additional_args = function(_)
+            return { "--hidden" }
+          end,
+        },
+        find_files = {
+          file_ignore_patterns = { "node_modules", ".git" },
+          hidden = true,
+        },
+      }
+      return opts
+    end,
+  },
   {
     "NvChad/nvterm",
     config = function()
       require("nvterm").setup()
     end,
   },
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {

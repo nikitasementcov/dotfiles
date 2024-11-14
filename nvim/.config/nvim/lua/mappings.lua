@@ -141,9 +141,4 @@ map("n", "<leader>ft", function()
 end, { desc = "Find theme" })
 
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
-map(
-  "n",
-  "<leader>fF",
-  "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
-  { desc = "Find all files" }
-)
+map("n", "<leader>fF", "<cmd>Telescope find_files follow=true no_ignore=true<CR>", { desc = "Find all files" })
