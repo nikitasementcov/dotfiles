@@ -11,10 +11,10 @@
 6. Install chrome extensions like 1password
 7. Generate ssh keys
 8. Install apps manually from a store (e.g. Things 3)
+9. Set up startup applications manually
 
 ## TODO:
 * automate installation of zsh plugins
-* karabiner config
 * install tmux plugin manager (tpm)[https://github.com/tmux-plugins/tpm] ??
 * run asdf before brew.sh (add it to the steps above)
 * chrome extensions
