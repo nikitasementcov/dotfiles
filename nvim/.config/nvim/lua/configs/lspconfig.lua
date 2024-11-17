@@ -3,7 +3,7 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
-local servers = { "html", "cssls", "eslint", "ts_ls", "clangd", "vue-language-server" }
+local servers = { "html", "cssls", "eslint", "ts_ls", "clangd", "vls", "volar" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -57,5 +57,22 @@ lspconfig.emmet_language_server.setup {
     syntaxProfiles = {},
     --- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
     variables = {},
+  },
+}
+
+lspconfig.ts_ls.setup {
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = "/Users/ns/.asdf/installs/nodejs/18.13.0/lib/node_modules/@vue/typescript-plugin",
+        languages = { "javascript", "typescript", "vue" },
+      },
+    },
+    filetypes = {
+      "javascript",
+      "typescript",
+      "vue",
+    },
   },
 }
