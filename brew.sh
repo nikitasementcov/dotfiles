@@ -102,6 +102,7 @@ brew install --cask karabiner-elements
 brew install --cask postman
 brew install --cask nikitabobko/tap/aerospace
 brew install --cask visual-studio-code
+brew install --cask rize
 
 # Remove outdated versions from the cellar.
 brew cleanup
