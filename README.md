@@ -14,6 +14,7 @@
 9. Set up startup applications manually
 10. Install zsh and tmux plugins, check nested Readme files
 11. To finish nvim installation run `:Lazy` and `:MasonInstallAll`
+12. Config git global and local settings, like `git config set --global user.email ...`
 
 ## TODO:
 * automate installation of zsh plugins
