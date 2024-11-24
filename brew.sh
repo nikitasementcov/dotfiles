@@ -90,19 +90,21 @@ brew install bottom # btm
 # brew install --cask discord
 
 brew install --cask telegram
-brew install --cask font-hack-nerd-font
 brew install --cask notion
 brew install --cask notion-calendar
 brew install --cask zoom
 brew install --cask spotify
-brew install --cask xnconvert
-brew install --cask transnomino
 brew install --cask raycast
 brew install --cask karabiner-elements
 brew install --cask postman
-brew install --cask nikitabobko/tap/aerospace
-brew install --cask visual-studio-code
 brew install --cask rize
+brew install --cask nikitabobko/tap/aerospace
+
+brew install --cask visual-studio-code
+brew install --cask font-hack-nerd-font
+brew install --cask db-browser-for-sqlite
+brew install --cask xnconvert
+brew install --cask transnomino
 
 # Remove outdated versions from the cellar.
 brew cleanup
