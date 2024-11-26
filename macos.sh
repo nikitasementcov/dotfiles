@@ -41,9 +41,15 @@ defaults write com.apple.HIToolbox AppleFnUsageType -int 0
 # Set preferred languages to English (US) and Russian, removing all others
 defaults write NSGlobalDomain AppleLanguages -array "en-US" "ru"
 
+# Always show hidden files (dotfiles) in Finder
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Restart Finder to apply changes
+
 # Restarting
 killall SystemUIServer
 killall Dock
 killall ControlStrip
+killall Finder
 
 echo "Done"
