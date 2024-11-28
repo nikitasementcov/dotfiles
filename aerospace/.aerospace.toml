@@ -229,5 +229,9 @@ if.app-name-regex-substring = 'Telegram'
 run = ['move-node-to-workspace P']
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'Rize'
+run = ['move-node-to-workspace R']
+
+[[on-window-detected]]
 if.app-id = 'notion.id'
 run = ['move-node-to-workspace N']
