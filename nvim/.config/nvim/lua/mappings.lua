@@ -105,9 +105,7 @@ map("n", "<leader>Wk", function()
 end, { desc = "Which-key query lookup" })
 
 -- NvimTree mapping
-
--- Focus nvimtree
-map("n", "<leader>o", "<cmd> NvimTreeFocus <CR>", { desc = "Focus nvimtree" })
+map("n", "<leader>o", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
 
 -- NvTerm mappings
 
