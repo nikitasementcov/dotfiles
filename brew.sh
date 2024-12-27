@@ -99,6 +99,7 @@ brew install --cask karabiner-elements
 brew install --cask postman
 brew install --cask rize
 brew install --cask nikitabobko/tap/aerospace
+brew install --cask anki
 
 brew install --cask visual-studio-code
 brew install --cask font-hack-nerd-font
