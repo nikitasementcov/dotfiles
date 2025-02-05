@@ -89,6 +89,8 @@ brew install bottom # btm
 # brew install --cask slack
 # brew install --cask discord
 
+brew install --cask docker
+brew install docker-compose
 brew install --cask telegram
 brew install --cask notion
 brew install --cask notion-calendar
