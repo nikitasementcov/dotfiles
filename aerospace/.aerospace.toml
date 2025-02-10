@@ -237,6 +237,10 @@ if.app-name-regex-substring = 'Things'
 run = ['move-node-to-workspace T']
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'ChatGPT'
+run = ['move-node-to-workspace G']
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'Rize'
 run = ['move-node-to-workspace R']
 
