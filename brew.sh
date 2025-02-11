@@ -85,6 +85,8 @@ brew install vbindiff
 brew install zopfli
 brew install bottom # btm
 
+brew install protobuf
+
 # brew install --cask microsoft-teams
 # brew install --cask slack
 # brew install --cask discord
