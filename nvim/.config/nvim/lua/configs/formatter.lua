@@ -18,6 +18,9 @@ local M = {
     lua = {
       require("formatter.filetypes.lua").stylua,
     },
+    vue = {
+      require("formatter.filetypes.vue").prettier,
+    },
     ["*"] = {
       require("formatter.filetypes.any").remove_trailing_whitespace,
     },
