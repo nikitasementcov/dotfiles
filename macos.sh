@@ -45,8 +45,8 @@ defaults write NSGlobalDomain AppleLanguages -array "en-US" "ru"
 # Always show hidden files (dotfiles) in Finder
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-# Restart Finder to apply changes
-
+# Set system time format to 24-hour
+defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
 
 # Anki settings
 defaults write net.ankiweb.dtop NSAppSleepDisabled -bool true
