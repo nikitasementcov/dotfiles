@@ -1,5 +1,15 @@
 return {
   {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
+    config = function()
+      require("lspconfig").volar.setup {}
+    end,
+  },
+  {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
@@ -78,6 +88,7 @@ return {
         "vim",
         "vimdoc",
         "lua",
+        "vue",
         "html",
         "css",
         "javascript",

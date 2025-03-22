@@ -1,6 +1,11 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
+require("mason").setup()
+require("mason-lspconfig").setup {
+  ensure_installed = { "volar" },
+}
+
 local lspconfig = require "lspconfig"
 
 local servers = { "html", "cssls", "eslint", "ts_ls", "clangd", "vls", "volar" }
@@ -75,4 +80,9 @@ lspconfig.ts_ls.setup {
       "vue",
     },
   },
+}
+
+lspconfig.volar.setup {
+  capabilities = nvlsp.capabilities,
+  filetypes = { "vue" },
 }
