@@ -111,6 +111,7 @@ brew install --cask font-hack-nerd-font
 brew install --cask db-browser-for-sqlite
 brew install --cask xnconvert
 brew install --cask transnomino
+brew install --cask dbeaver-community
 
 # Remove outdated versions from the cellar.
 brew cleanup
