@@ -91,7 +91,6 @@ brew install bottom # btm
 
 # brew install --cask microsoft-teams
 # brew install --cask slack
-# brew install --cask discord
 
 brew install --cask docker
 brew install docker-compose
@@ -115,6 +114,7 @@ brew install --cask xnconvert
 brew install --cask transnomino
 brew install --cask wave
 brew install --cask dbeaver-community
+brew install --cask discord
 
 # Remove outdated versions from the cellar.
 brew cleanup
