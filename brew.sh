@@ -99,6 +99,7 @@ brew install --cask notion
 brew install --cask notion-calendar
 brew install --cask zoom
 brew install --cask spotify
+brew install spotify-tui
 brew install --cask raycast
 brew install --cask karabiner-elements
 brew install --cask postman
