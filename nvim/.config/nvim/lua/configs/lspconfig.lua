@@ -1,17 +1,12 @@
--- load defaults i.e lua_lsp
-require("nvchad.configs.lspconfig").defaults()
-
+require("nvchad.configs.lspconfig").defaults() -- load defaults i.e lua_lsp
 require("mason").setup()
-require("mason-lspconfig").setup {
-  ensure_installed = { "volar" },
-}
+require("mason-lspconfig").setup()
 
 local lspconfig = require "lspconfig"
-
-local servers = { "html", "cssls", "eslint", "ts_ls", "clangd", "vls", "volar" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
--- lsps with default config
+-- DEFAULT LSP configs:
+local servers = { "html", "cssls", "eslint", "clangd" }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = nvlsp.on_attach,
@@ -19,13 +14,34 @@ for _, lsp in ipairs(servers) do
     capabilities = nvlsp.capabilities,
   }
 end
+--
 
--- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
+-- SPECIFIC LSP configs:
+local mason_registry = require "mason-registry"
+local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+  .. "/node_modules/@vue/language-server"
+
+lspconfig.ts_ls.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = vue_language_server_path,
+        languages = { "vue" },
+      },
+    },
+  },
+  filetypes = {
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "vue",
+  },
+}
 
 lspconfig.emmet_language_server.setup {
   filetypes = {
@@ -63,26 +79,4 @@ lspconfig.emmet_language_server.setup {
     --- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
     variables = {},
   },
-}
-
-lspconfig.ts_ls.setup {
-  init_options = {
-    plugins = {
-      {
-        name = "@vue/typescript-plugin",
-        location = "/Users/ns/.asdf/installs/nodejs/18.13.0/lib/node_modules/@vue/typescript-plugin",
-        languages = { "javascript", "typescript", "vue" },
-      },
-    },
-    filetypes = {
-      "javascript",
-      "typescript",
-      "vue",
-    },
-  },
-}
-
-lspconfig.volar.setup {
-  capabilities = nvlsp.capabilities,
-  filetypes = { "vue" },
 }

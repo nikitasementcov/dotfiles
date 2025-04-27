@@ -1,23 +1,16 @@
 return {
   {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-    },
-    config = function()
-      require("lspconfig").volar.setup {}
-    end,
-  },
-  {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
     config = function()
       require "configs.lspconfig"
     end,
@@ -91,6 +84,7 @@ return {
         "vue",
         "html",
         "css",
+        "scss",
         "javascript",
         "typescript",
         "tsx",
@@ -138,6 +132,22 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "marilari88/neotest-vitest",
       "nvim-neotest/neotest-jest",
+    },
+  },
+  {
+    "catgoose/nvim-colorizer.lua",
+    event = "BufReadPre",
+    opts = {
+      filetypes = { "*" },
+      user_default_options = {
+        css = true,
+        css_fn = true,
+        tailwind = false,
+        tailwind_opts = {
+          update_names = false, -- When using tailwind = 'both', update tailwind names from LSP results.  See tailwind section
+        },
+        sass = { enable = true, parsers = { "css" } },
+      },
     },
   },
   -- {
