@@ -97,6 +97,7 @@ brew install docker-compose
 brew install --cask telegram
 brew install --cask notion
 brew install --cask notion-calendar
+brew install --cask obsidian
 brew install --cask zoom
 brew install --cask spotify
 brew install spotify-tui
