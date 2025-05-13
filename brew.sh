@@ -86,6 +86,7 @@ brew install vbindiff
 brew install zopfli
 brew install bottom # btm
 brew install syncthing
+brew install exercism
 
 # brew install protobuf
 # brew install kcat
