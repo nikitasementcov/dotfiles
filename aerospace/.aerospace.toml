@@ -213,6 +213,10 @@ if.app-name-regex-substring = 'Anki'
 run = ['move-node-to-workspace A']
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'Obsidian'
+run = ['move-node-to-workspace O']
+
+[[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = ['move-node-to-workspace 3']
 
