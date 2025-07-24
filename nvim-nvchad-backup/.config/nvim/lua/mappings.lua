@@ -106,7 +106,12 @@ end, { desc = "Which-key query lookup" })
 
 -- NvimTree mapping
 map("n", "<leader>o", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
+vim.keymap.del("n", "<C-n>")
 
+-- visualmulti
+map("n", "<C-n>", "<Plug>(VM-Find-Under)", { desc = "visualmulti - select word" })
+-- ":<C-u>call vm#commands#add_cursor_down(0)<CR>"
+--
 -- NvTerm mappings
 
 -- Toggle floating term

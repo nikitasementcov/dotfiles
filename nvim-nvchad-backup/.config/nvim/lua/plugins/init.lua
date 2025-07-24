@@ -169,4 +169,20 @@ return {
   --     require("lsp-file-operations").setup()
   --   end,
   -- },
+  {
+    "mg979/vim-visual-multi",
+    branch = "master",
+    lazy = false,
+    -- init = function()
+    --   vim.g.VM_maps = { ["Find Under"] = "<C-n>" }
+    -- end,
+    -- config = function()
+    --   local map = vim.keymap.set
+    --   local opts = { noremap = true, silent = true }
+    --   map("n", "<C-m>", "<Plug>(VM-Find-Under)", opts)
+    --   map("n", "<C-Down>", "<Plug>(VM-Add-Cursor-Down)", opts)
+    --   map("n", "<C-Up>", "<Plug>(VM-Add-Cursor-Up)", opts)
+    --   map("x", "<C-n>", "<Plug>(VM-Find-Subword-Under)", opts)
+    -- end,
+  },
 }

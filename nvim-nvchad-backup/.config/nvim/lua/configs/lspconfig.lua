@@ -1,15 +1,23 @@
+-- Fix focusing of hints in some cases
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+  border = "rounded",
+  focusable = false,
+  silent = true,
+})
+
 require("nvchad.configs.lspconfig").defaults() -- load defaults i.e lua_lsp
 -- require("mason").setup()
 -- require("mason-lspconfig").setup()
 
 -- local node_path = vim.fn.trim(vim.fn.system "asdf which node")
 
--- vim.lsp.set_log_level "debug"
+vim.lsp.set_log_level "debug"
 
 -- local node_version = vim.fn.trim(vim.fn.system "node -v")
 
 local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.configs.lspconfig"
+local util = require "lspconfig.util"
 
 -- local mason_registry = require "mason-registry"
 -- local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
@@ -25,18 +33,22 @@ local nvlsp = require "nvchad.configs.lspconfig"
 --   .. "/lib/node_modules/@vue/language-server"
 
 lspconfig.ts_ls.setup {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
-  -- init_options = {
-  --   plugins = {
-  --     {
-  --       name = "@vue/typescript-plugin",
-  --       location = vue_language_server_path,
-  --       languages = { "vue" },
-  --     },
-  --   },
-  -- },
+  -- on_attach = nvlsp.on_attach,
+  -- on_init = nvlsp.on_init,
+  -- capabilities = nvlsp.capabilities,
+  root_dir = util.root_pattern("tsconfig.json", "package.json"),
+  init_options = {
+    preferences = {
+      importModuleSpecifierPreference = "non-relative",
+    },
+    --   plugins = {
+    --     {
+    --       name = "@vue/typescript-plugin",
+    --       location = vue_language_server_path,
+    --       languages = { "vue" },
+    --     },
+    --   },
+  },
   filetypes = {
     "javascript",
     "typescript",
@@ -68,7 +80,8 @@ lspconfig.ts_ls.setup {
 -- lspconfig.vuels.setup {}
 
 lspconfig.volar.setup {
-  filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+  -- filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+  filetypes = { "vue" },
   init_options = {
     vue = {
       hybridMode = false,
