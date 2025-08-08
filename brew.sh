@@ -57,6 +57,7 @@ brew install lazygit
 brew install sourcetree
 brew install fzf
 brew install zsh-syntax-highlighting
+brew install yazi
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
