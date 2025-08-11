@@ -17,6 +17,8 @@ ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
 brew install --cask google-chrome
 brew install --cask alacritty
+brew install --cask wave
+brew install --cask wezterm
 
 brew install moreutils
 brew install findutils
@@ -35,10 +37,9 @@ chsh -s $(which zsh)
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
-  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
-  chsh -s "${BREW_PREFIX}/bin/bash";
-fi;
-
+  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells
+  chsh -s "${BREW_PREFIX}/bin/bash"
+fi
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
@@ -49,6 +50,7 @@ brew install tmux
 brew install neovim
 brew install grep
 brew install ripgrep
+brew install fd
 brew install openssh
 brew install screen
 brew install gmp
@@ -58,6 +60,9 @@ brew install sourcetree
 brew install fzf
 brew install zsh-syntax-highlighting
 brew install yazi
+brew install resvg
+#brew install ffmpeg
+brew install jq
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
@@ -76,6 +81,7 @@ brew install jesseduffield/lazygit/lazygit
 brew install gs
 brew install imagemagick
 brew install lua
+brew install busted
 brew install lynx
 brew install p7zip
 brew install pigz
@@ -90,6 +96,7 @@ brew install bottom # btm
 brew install syncthing
 brew install exercism
 brew install fbreader
+# brew install awscli
 
 # brew install protobuf
 # brew install kcat
@@ -119,7 +126,6 @@ brew install --cask font-hack-nerd-font
 brew install --cask db-browser-for-sqlite
 brew install --cask xnconvert
 brew install --cask transnomino
-brew install --cask wave
 brew install --cask dbeaver-community
 brew install --cask discord
 
