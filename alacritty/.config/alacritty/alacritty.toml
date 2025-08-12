@@ -8,6 +8,7 @@ args = ["-l"]
 [window]
 padding.x = 0
 padding.y = 0
+option_as_alt = "OnlyLeft"
 
 [font]
 size = 14.0
