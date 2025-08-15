@@ -121,6 +121,13 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lg='lazygit'
 
+# default nvim dir
+export NVIM_APPNAME=LazyVim
+
+alias nvim-chad="NVIM_APPNAME=NvChad nvim"
+alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+alias nvim-default="NVIM_APPNAME= nvim"
+
 case $OSTYPE in
     linux*)
         # Start keychain and add SSH key
