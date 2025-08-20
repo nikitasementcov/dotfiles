@@ -19,5 +19,12 @@
     "jj": {
       "command": "vscode-neovim.escape"
     }
+  },
+  "css.enabledLanguages": [
+    "html",
+    "vue"
+  ],
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
