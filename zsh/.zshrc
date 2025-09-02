@@ -120,6 +120,7 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lg='lazygit'
+alias cl='clear'
 
 # default nvim dir
 export NVIM_APPNAME=LazyVim
