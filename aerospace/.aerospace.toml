@@ -208,6 +208,10 @@ alt-shift-l = ['join-with right', 'mode main']
 
 # run osascript -e 'id of app "Application Name"' to get app-id
 [[on-window-detected]]
+if.app-name-regex-substring = 'WezTerm'
+run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'Alacritty'
 run = ['move-node-to-workspace 2']
 
