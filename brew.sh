@@ -30,6 +30,7 @@ brew install bash-completion2
 brew install zsh
 brew install stow
 brew install dockutil
+brew install dive
 brew install openssl
 
 sh -c "echo $(which zsh) >> /etc/shells"
