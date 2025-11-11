@@ -106,6 +106,7 @@ brew install fbreader
 # brew install --cask microsoft-teams
 # brew install --cask slack
 
+brew install --cask claude-code
 brew install --cask docker
 brew install docker-compose
 brew install --cask telegram
