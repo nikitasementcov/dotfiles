@@ -140,3 +140,5 @@ esac
 
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH="$HOME/.local/bin:$PATH"
