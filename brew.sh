@@ -58,6 +58,7 @@ brew install screen
 brew install gmp
 brew install wget
 brew install lazygit
+brew install glab
 brew install sourcetree
 brew install fzf
 brew install zsh-syntax-highlighting
