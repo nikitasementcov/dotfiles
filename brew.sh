@@ -133,6 +133,7 @@ brew install --cask xnconvert
 brew install --cask transnomino
 brew install --cask dbeaver-community
 brew install --cask discord
+brew install --cask antconc
 
 # Remove outdated versions from the cellar.
 brew cleanup
