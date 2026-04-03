@@ -99,6 +99,7 @@ brew install bottom # btm
 brew install syncthing
 brew install exercism
 brew install fbreader
+brew install mole
 # brew install awscli
 
 # brew install protobuf
