@@ -17,7 +17,7 @@ ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
 brew install --cask google-chrome
 brew install --cask alacritty
-brew install --cask wave
+# brew install --cask wave
 brew install --cask wezterm
 
 brew install btop
