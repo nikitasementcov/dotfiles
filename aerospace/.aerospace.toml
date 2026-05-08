@@ -114,6 +114,7 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+# In your config, you can drop workspace bindings that you don't need 
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
@@ -123,12 +124,12 @@ alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
-alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-alt-b = 'workspace B'
-# alt-c = 'workspace C'
-# alt-d = 'workspace D'
-alt-e = 'workspace E'
-# alt-f = 'workspace F'
+# alt-a # tmux session
+# alt-b # tmux session
+# alt-c # tmux session
+# alt-d # tmux session
+# alt-e # tmux session
+# alt-f # tmux session
 alt-g = 'workspace G'
 # alt-i = 'workspace I'
 # alt-m = 'workspace M'
@@ -211,13 +212,9 @@ alt-shift-l = ['join-with right', 'mode main']
 if.app-name-regex-substring = 'WezTerm'
 run = ['move-node-to-workspace 2']
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'Alacritty'
-run = ['move-node-to-workspace 2']
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'Anki'
-run = ['move-node-to-workspace A']
+# [[on-window-detected]]
+# if.app-name-regex-substring = 'Alacritty'
+# run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Obsidian'
@@ -227,9 +224,9 @@ run = ['move-node-to-workspace O']
 if.app-id = 'com.google.Chrome'
 run = ['move-node-to-workspace 3']
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'Cursor'
-run = ['move-node-to-workspace 4']
+# [[on-window-detected]]
+# if.app-name-regex-substring = 'Cursor'
+# run = ['move-node-to-workspace 4']
 
 # [[on-window-detected]]
 # if.app-id = 'com.spotify.client'
@@ -238,14 +235,6 @@ run = ['move-node-to-workspace 4']
 # [[on-window-detected]]
 # if.app-id = 'com.apple.mail'
 # run = ['move-node-to-workspace M']
-
-# [[on-window-detected]]
-# if.app-id = 'com.microsoft.teams2'
-# run = ['move-node-to-workspace C']
-
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'Lark'
-# run = ['move-node-to-workspace C']
 
 # [[on-window-detected]]
 # if.app-name-regex-substring = 'Telegram'
