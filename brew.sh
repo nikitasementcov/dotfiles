@@ -108,6 +108,7 @@ brew install mole
 # brew install --cask microsoft-teams
 # brew install --cask slack
 
+brew install anomalyco/tap/opencode
 brew install --cask claude-code
 brew install --cask docker
 brew install docker-compose
