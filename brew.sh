@@ -122,7 +122,7 @@ brew install spotify-tui
 brew install --cask raycast
 brew install --cask karabiner-elements
 brew install --cask postman
-brew install --cask rize
+# brew install --cask rize
 brew install --cask nikitabobko/tap/aerospace
 brew install --cask anki
 brew install --cask chatgpt
