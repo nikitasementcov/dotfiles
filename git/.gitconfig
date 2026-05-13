@@ -1,5 +1,6 @@
 [user]
-	name = Nikita Sementsov
+  name = Nikita Sementsov
+  email = nikita.sementsov@zfx.com
 [init]
   defaultBranch = main
 [push]
@@ -14,3 +15,11 @@
 	st = status
 	lga = !git log --graph --all
 	lag = !git log --graph --all
+[core]
+  excludesfile = /Users/ns/.gitignore_global
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
+[mergetool "sourcetree"]
+  cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
