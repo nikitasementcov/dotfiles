@@ -127,6 +127,7 @@ brew install --cask nikitabobko/tap/aerospace
 brew install --cask anki
 brew install --cask chatgpt
 brew install --cask vlc
+brew install --cask dropbox
 
 brew install --cask visual-studio-code
 brew install --cask font-hack-nerd-font
