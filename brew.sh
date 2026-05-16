@@ -131,7 +131,6 @@ brew install --cask dropbox
 
 brew install --cask visual-studio-code
 brew install --cask font-hack-nerd-font
-brew install --cask db-browser-for-sqlite
 brew install --cask xnconvert
 brew install --cask transnomino
 brew install --cask dbeaver-community
