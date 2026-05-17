@@ -1,6 +1,7 @@
 return {
   {
-    "echasnovski/mini.comment",
+    -- "echasnovski/mini.comment",
+    "nvim-mini/mini.comment",
     opts = {
       mappings = {
         comment = "<leader>/",
