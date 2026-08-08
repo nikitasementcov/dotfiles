@@ -19,7 +19,7 @@ brew install --cask google-chrome
 brew install --cask alacritty
 # brew install --cask wave
 brew install --cask wezterm
-
+brew install --cask ghostty
 brew install btop
 brew install moreutils
 brew install findutils

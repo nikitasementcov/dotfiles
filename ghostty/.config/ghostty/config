@@ -1,0 +1,15 @@
+# Ghostty config — https://ghostty.org/docs/config/reference
+# Mirrors the alacritty/wezterm setup: Hack Nerd Font Mono, Tokyo Night theme.
+
+font-family = Hack Nerd Font Mono
+font-size = 14
+
+theme = tokyonight
+
+window-padding-x = 0
+window-padding-y = 0
+
+macos-option-as-alt = left
+
+# Desktop notifications when a command finishes (e.g. Claude Code)
+desktop-notifications = true
