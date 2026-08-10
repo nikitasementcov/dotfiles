@@ -7,7 +7,7 @@
 2. `brew install asdf`
 3. Run `asdf.sh`
 4. Run `sudo brew.sh`
-5. Use GNU stow to create symlinks to the configs `stow nvim alacritty tmux claude`
+5. Use GNU stow to create symlinks to the configs `stow nvim alacritty tmux claude herdr`
    - Run `./claude.sh` to install Claude Code plugins and MCP servers (see `claude/README.md`)
 6. Install chrome extensions like 1password
 7. Generate ssh keys
