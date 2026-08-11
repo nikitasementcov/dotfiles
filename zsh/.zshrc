@@ -149,3 +149,4 @@ export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 
 export EDITOR=nvim
+export PATH="$(npm prefix -g)/bin:$PATH"
