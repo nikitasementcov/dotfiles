@@ -94,6 +94,7 @@ setopt hist_ignore_space
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$(npm prefix -g)/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -149,4 +150,3 @@ export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 
 export EDITOR=nvim
-export PATH="$(npm prefix -g)/bin:$PATH"
