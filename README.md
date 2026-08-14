@@ -7,15 +7,16 @@
 2. `brew install asdf`
 3. Run `asdf.sh`
 4. Run `sudo brew.sh`
-5. Use GNU stow to create symlinks to the configs `stow nvim alacritty tmux claude herdr`
+5. Run `./extras.sh` to install tools not available via Homebrew or have another recommended way of installation
+6. Use GNU stow to create symlinks to the configs `stow nvim alacritty tmux claude herdr`
    - Run `./claude.sh` to install Claude Code plugins and MCP servers (see `claude/README.md`)
-6. Install chrome extensions like 1password
-7. Generate ssh keys
-8. Install apps manually from a store (e.g. Things 3)
-9. Set up startup applications manually
-10. Install zsh and tmux plugins, check nested Readme files
-11. To finish nvim installation run `:Lazy` and `:MasonInstallAll`
-12. Config git global and local settings, like `git config set --global user.email ...`
+7. Install chrome extensions like 1password
+8. Generate ssh keys
+9. Install apps manually from a store (e.g. Things 3)
+10. Set up startup applications manually
+11. Install zsh and tmux plugins, check nested Readme files
+12. To finish nvim installation run `:Lazy` and `:MasonInstallAll`
+13. Config git global and local settings, like `git config set --global user.email ...`
 
 ## TODO:
 * automate installation of zsh plugins
