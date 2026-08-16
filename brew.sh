@@ -67,6 +67,7 @@ brew install yazi
 brew install resvg
 #brew install ffmpeg
 brew install jq
+brew install hunk
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
