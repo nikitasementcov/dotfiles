@@ -19,6 +19,7 @@ mouse_capture = true
 # MouseDragEnd1Pane binding that ran `tmux save-buffer | xclip`.
 copy_on_select = true
 
+agent_panel_sort = "priority"
 [keys]
 prefix = "ctrl+b"
 
