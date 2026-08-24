@@ -20,3 +20,7 @@ asdf global rust latest
 asdf plugin add java
 asdf install java openjdk-17
 asdf global java openjdk-17
+
+asdf plugin add pnpm
+asdf install pnpm latest
+asdf global pnpm latest
