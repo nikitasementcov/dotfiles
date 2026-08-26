@@ -46,7 +46,7 @@ self-explanatory — match whichever pattern the most recent commits use.
    file-level granularity is enough.
 3. Pick the most complete, self-contained group as the chunk to commit.
    Leave scaffolding/placeholder files (e.g. scripts still full of `<name>`
-   template blocks) and unrelated one-line additions out.
+   template blocks) and unrelated one-line additions out. Do not ask me to select one of the chunks.
 4. Stage only that group:
    - Whole files that are 100% part of the chunk: `git add <file>`.
    - A file that mixes the target chunk with unrelated hunks: don't rely on
