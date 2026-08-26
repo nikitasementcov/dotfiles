@@ -28,6 +28,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install asdf
 
 "${DOTFILES_DIR}/asdf.sh"
+"${DOTFILES_DIR}/pnpm-globals.sh"
 sudo "${DOTFILES_DIR}/brew.sh"
 
 echo "install.sh: done"

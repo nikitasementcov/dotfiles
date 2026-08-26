@@ -1,7 +1,7 @@
 # Dotfiles
 
 1. Clone that repo (~/dotfiles is preffered dir to use stow without extra arguments)
-2. Run `./install.sh` to install Xcode Command Line Tools, `brew`, `asdf`, and Homebrew packages
+2. Run `./install.sh` to install Xcode Command Line Tools, `brew`, `asdf`, Homebrew packages, and global pnpm packages
 3. Run `./extras.sh` to install tools not available via Homebrew or have another recommended way of installation
 4. Use GNU stow to create symlinks to the configs `stow nvim alacritty tmux claude herdr`
    - Run `./claude.sh` to install Claude Code plugins and MCP servers (see `claude/README.md`)
