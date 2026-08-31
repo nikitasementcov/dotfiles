@@ -70,6 +70,7 @@ brew install resvg
 brew install jq
 brew install hunk
 brew install just
+brew install asciinema
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
