@@ -3,3 +3,8 @@
 !claude/.claude/**
 !AGENTS.md
 !CLAUDE.md
+**/.omc/state
+
+claude/.claude/skills/omc-learned/pag8-deposit.md
+claude/.claude/skills/omc-learned/rfc.md
+claude/.claude/skills/frontoffice**
