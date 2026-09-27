@@ -6,9 +6,15 @@
 
 set -euo pipefail
 
-# Ensure pnpm's global bin dir is on PATH (normally set up by .zshrc, but
-# install.sh may run this before that's sourced).
-export PNPM_HOME="${PNPM_HOME:-$HOME/Library/pnpm}"
+# Ensure pnpm's global bin dir is on PATH (normally set up by
+# ~/.config/shell/common.sh, but install.sh may run this before that's sourced).
+if [[ -z "${PNPM_HOME:-}" ]]; then
+  case "$(uname -s)" in
+  Darwin) PNPM_HOME="$HOME/Library/pnpm" ;;
+  *) PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm" ;;
+  esac
+fi
+export PNPM_HOME
 case ":$PATH:" in
 *":$PNPM_HOME/bin:"*) ;;
 *) export PATH="$PNPM_HOME/bin:$PATH" ;;
