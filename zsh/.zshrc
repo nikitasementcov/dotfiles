@@ -119,41 +119,18 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias lg='lazygit'
-alias cl='clear'
-
-# default nvim dir
-export NVIM_APPNAME=LazyVim
-
-alias nvim-chad="NVIM_APPNAME=NvChad nvim"
-alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
-alias nvim-default="NVIM_APPNAME= nvim"
-
-case $OSTYPE in
-    linux*)
-        # Start keychain and add SSH key
-        eval `keychain --eval --agents ssh id_rsa`
-esac
+# Aliases, EDITOR, NVIM_APPNAME, pnpm (shared with bash, see shell/.config/shell/common.sh)
+[[ ! -r ~/.config/shell/common.sh ]] || source ~/.config/shell/common.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -n $HOMEBREW_PREFIX ]]; then
+  source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
+  source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export PATH="$HOME/.local/bin:$PATH"
-
-# ruby
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
-
-export EDITOR=nvim
-
-# pnpm
-export PNPM_HOME="/Users/ns/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
+  # ruby
+  export PATH="$HOMEBREW_PREFIX/opt/ruby/bin:$PATH"
+  export LDFLAGS="-L$HOMEBREW_PREFIX/opt/ruby/lib"
+  export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/ruby/include"
+fi
