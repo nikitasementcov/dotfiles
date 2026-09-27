@@ -13,19 +13,52 @@
 10. To finish nvim installation run `:Lazy` and `:MasonInstallAll`
 11. Config git global and local settings, like `git config set --global user.email ...`
 
+## Omarchy (Arch Linux)
+
+Omarchy ships its own bash, tmux, herdr, terminal, and Neovim configs wired into its theme switcher. On Omarchy the dotfiles layer on top of those instead of replacing them.
+
+1. Clone to `~/dotfiles` and run `./install.sh`. On Linux it runs `arch.sh` (pacman/yay packages Omarchy doesn't ship), `mise.sh` (python, rust, java, pnpm via mise), and `pnpm-globals.sh`.
+2. `install -d -m 700 ~/.ssh` **before** stowing `ssh`. Otherwise stow symlinks the whole directory into the repo and new keys would land in git.
+3. Dry-run stow and move any conflicting Omarchy files to a backup dir. Never use `--adopt`, because it overwrites repo files with the machine's copies:
+   ```sh
+   stow -n -v shell bash git ssh tmux herdr lazygit claude LazyVim NvChad vim opencode hypr
+   # typical conflicts: ~/.bashrc ~/.config/herdr/config.toml ~/.config/lazygit/config.yml
+   #                    ~/.claude/settings.json ~/.config/opencode/opencode.json ~/.config/hypr/input.lua
+   stow shell bash git ssh tmux herdr lazygit claude LazyVim NvChad vim opencode hypr
+   ```
+4. Don't stow these on Omarchy: `zsh` (Omarchy uses bash; shared aliases live in `shell`), `alacritty`, `ghostty`, `wezterm` (they would replace Omarchy's themed configs), and the macOS-only `aerospace`, `karabiner`, `vscode`.
+5. Look & feel through Omarchy: `omarchy-theme-set "Tokyo Night"`, and pick Hack Nerd Font from the Omarchy font menu.
+6. SSH: `ssh-keygen -t ed25519`, then `systemctl --user enable --now ssh-agent` (`bash/.bashrc` picks up its socket).
+7. Create `~/.gitconfig.local` (not stowed) with the machine's identity:
+   ```ini
+   [user]
+     name = Nikita Sementsov
+     email = sementcov.nikita@gmail.com
+   ```
+   On macOS use the work email there, and put the Sourcetree `difftool`/`mergetool` sections in it too.
+8. Run `./claude.sh`, install TPM (see Manual Follow-Ups), and in Neovim run `:Lazy`.
+
+How the layering works:
+- `bash/.bashrc` is Omarchy's template: it sources `$OMARCHY_PATH/default/bash/rc` (starship, mise, zoxide, aliases), then `~/.config/shell/common.sh`, which is shared with `zsh/.zshrc`.
+- `tmux/.tmux.conf` first sources Omarchy's `~/.config/tmux/tmux.conf` (tmux loads only the first config it finds), then applies my overrides. The `tmux-power` theme only loads on macOS.
+- `herdr/.config/herdr/config.toml` is Omarchy's herdr config merged with my keys, because herdr has no includes. Validate it with `herdr config check`.
+- The `LazyVim` profile loads Omarchy's Neovim extras from the `omarchy-nvim` package (`/etc/skel/.config/nvim`): live theme reload on `omarchy-theme-set`, all theme plugins (from the package's bundled copies), transparent background, and the wl-copy/OSC52 clipboard inside tmux, herdr and ssh. `lua/config/lazy.lua` creates a gitignored `lua/plugins/theme.lua` symlink to the current theme. All of this is skipped on macOS. On Omarchy, `lazy-lock.json` drops the theme plugins it loads from the package (such as tokyonight), so expect that diff.
+- Omarchy's `~/.config/git/config` still applies, and `~/.gitconfig` overrides it.
+
 ## Repo Shape
 
 - This is a GNU Stow dotfiles repo; top-level directories are packages to symlink from the repo root, e.g. `stow zsh tmux claude herdr LazyVim`.
 - `LazyVim` and `NvChad` intentionally stow to separate Neovim app names: `~/.config/LazyVim` and `~/.config/NvChad`, not `~/.config/nvim`.
-- `zsh/.zshrc` sets `NVIM_APPNAME=LazyVim`; use `nvim-chad`, `nvim-lazy`, or `nvim-default` aliases when testing profile-specific behavior.
+- `shell/.config/shell/common.sh` (sourced by `zsh/.zshrc` and `bash/.bashrc`) sets `NVIM_APPNAME=LazyVim`; use `nvim-chad`, `nvim-lazy`, or `nvim-default` aliases when testing profile-specific behavior.
 - `claude/.claude/` is the stowed Claude Code config; `~/.claude/settings.json` and top-level `~/.claude.json` are deliberately not stowed because they contain mutable state.
 
 ## Setup Commands
 
-- Main macOS bootstrap is `./install.sh`; it installs Xcode CLT, Homebrew, `asdf`, global pnpm packages, then runs `sudo ./brew.sh`.
+- Main bootstrap is `./install.sh`; on macOS it installs Xcode CLT, Homebrew, `asdf`, global pnpm packages, then runs `sudo ./brew.sh`.
 - `./brew.sh` is not a declarative Brewfile; it performs `brew update`, `brew upgrade`, installs packages/casks, changes shells, and runs `brew cleanup`.
 - `./asdf.sh` installs latest Node.js, Python, Rust, Java `openjdk-17`, and latest pnpm via asdf.
 - `./pnpm-globals.sh` installs global `oxlint` and `oxfmt`, temporarily adding `$HOME/Library/pnpm/bin` to `PATH` if needed.
+- On Omarchy/Arch, `./install.sh` runs `./arch.sh` (idempotent `pacman`/`yay -S --needed`), `./mise.sh` (`mise use --global` for python, rust, java `openjdk-17`, pnpm), and `./pnpm-globals.sh`.
 - `./claude.sh` is idempotent and manages Claude Code marketplaces/plugins; it requires the `claude` CLI from the `claude-code` cask.
 - `./extras.sh` is currently only a guarded template; do not claim it installs real tools until blocks are added.
 
