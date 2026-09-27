@@ -3,12 +3,13 @@
 # Install Claude Code plugins and MCP servers.
 #
 # Idempotent: re-running is safe. Skips anything already installed.
-# Requires the `claude` CLI (installed via brew cask `claude-code` in brew.sh).
+# Requires the `claude` CLI (brew cask `claude-code` in brew.sh on macOS,
+# mise on Omarchy).
 
 set -euo pipefail
 
 if ! command -v claude >/dev/null 2>&1; then
-  echo "claude CLI not found; install via brew first (see brew.sh)." >&2
+  echo "claude CLI not found; install via brew (brew.sh) on macOS or mise on Omarchy." >&2
   exit 1
 fi
 
