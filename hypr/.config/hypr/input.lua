@@ -64,5 +64,8 @@ hl.config({
   input = {
     sensitivity = 0,
     accel_profile = "custom 1 0 1 2.25 3.75 5.25 7.22 9.50 11.78 14.06 16.34 18.62 20.90 23.18 25.46 28.96 33.67",
+
+    -- Caps Lock acts as Control (karabiner's caps_lock -> left_control, ported from macOS).
+    kb_options = "ctrl:nocaps",
   },
 })
