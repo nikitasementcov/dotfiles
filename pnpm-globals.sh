@@ -25,8 +25,12 @@ PACKAGES=(
   oxfmt
 )
 
+# `pnpm list -g <pkg>` exits 0 even when nothing matches (pnpm 12), so check
+# the JSON dependency list instead.
+installed="$(pnpm list -g --json 2>/dev/null || true)"
+
 for pkg in "${PACKAGES[@]}"; do
-  if pnpm list -g "$pkg" >/dev/null 2>&1; then
+  if grep -q "\"${pkg}\"" <<<"${installed}"; then
     echo "pnpm-globals.sh: $pkg already installed"
   else
     echo "pnpm-globals.sh: installing $pkg"
