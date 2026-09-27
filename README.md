@@ -50,7 +50,7 @@ How the layering works:
 - This is a GNU Stow dotfiles repo; top-level directories are packages to symlink from the repo root, e.g. `stow zsh tmux claude herdr LazyVim`.
 - `LazyVim` and `NvChad` intentionally stow to separate Neovim app names: `~/.config/LazyVim` and `~/.config/NvChad`, not `~/.config/nvim`.
 - `shell/.config/shell/common.sh` (sourced by `zsh/.zshrc` and `bash/.bashrc`) sets `NVIM_APPNAME=LazyVim`; use `nvim-chad`, `nvim-lazy`, or `nvim-default` aliases when testing profile-specific behavior.
-- `claude/.claude/` is the stowed Claude Code config; `~/.claude/settings.json` and top-level `~/.claude.json` are deliberately not stowed because they contain mutable state.
+- `claude/.claude/` is the stowed Claude Code config, including `settings.json`, `.omc-config.json`, and `CLAUDE.md`; only the top-level `~/.claude.json` is deliberately not stowed because it contains mutable state.
 
 ## Setup Commands
 

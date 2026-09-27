@@ -7,14 +7,18 @@ Two pieces:
   - `commands/` — custom slash commands
   - `agents/` — custom subagents
   - `hooks/` — hook scripts
+  - `skills/` — project skills
+  - `settings.json` — Claude Code settings
+  - `.omc-config.json` — oh-my-claudecode config
+  - `CLAUDE.md` — oh-my-claudecode project instructions
 
-Settings (`~/.claude/settings.json`) and the top-level `~/.claude.json` are **not** stowed —
-they mix durable config with mutable state (caches, dismissals, onboarding flags) that
-would churn on every Claude Code run. Use `claude.sh` to declare plugins/MCPs instead.
+The top-level `~/.claude.json` is **not** stowed — it mixes durable config with mutable
+state (caches, dismissals, onboarding flags) that would churn on every Claude Code run.
+Use `claude.sh` to declare plugins/MCPs instead.
 
 ## Usage
 
 ```sh
 ./claude.sh        # install/update plugins and MCPs
-stow claude        # symlink commands/agents/hooks into ~/.claude/
+stow claude        # symlink commands/agents/hooks/settings/CLAUDE.md into ~/.claude/
 ```
