@@ -10,7 +10,6 @@
     ]
   },
   "model": "sonnet",
-  "theme": "custom:omarchy",
   "hooks": {
     "SessionStart": [
       {
@@ -37,7 +36,8 @@
   "enabledPlugins": {
     "oh-my-claudecode@omc": true,
     "mattpocock-skills@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true
+    "playwright@claude-plugins-official": true,
+    "chrome-devtools-mcp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "chrome-devtools-plugins": {
@@ -55,6 +55,7 @@
   },
   "effortLevel": "xhigh",
   "skipWorkflowUsageWarning": true,
+  "theme": "custom:omarchy",
   "teammateMode": "tmux",
   "autoMode": {
     "environment": [
