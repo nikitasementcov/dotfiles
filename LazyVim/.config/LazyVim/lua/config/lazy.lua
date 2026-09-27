@@ -14,6 +14,15 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Omarchy: link the current theme spec as plugins/theme.lua, like ~/.config/nvim does, so
+-- lazy's change detection reloads it on `omarchy-theme-set` (see plugins/omarchy.lua).
+-- Machine-local and gitignored; skipped outside Omarchy.
+local omarchy_theme = vim.fn.expand("~/.local/state/omarchy/current/theme/neovim.lua")
+local theme_link = vim.fn.stdpath("config") .. "/lua/plugins/theme.lua"
+if vim.uv.fs_stat(omarchy_theme) and not vim.uv.fs_lstat(theme_link) then
+  vim.uv.fs_symlink(omarchy_theme, theme_link)
+end
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -51,3 +60,9 @@ require("lazy").setup({
     },
   },
 })
+
+-- Omarchy: wl-copy + OSC52 clipboard inside tmux/herdr/ssh (from the omarchy-nvim package)
+local omarchy_clipboard = "/etc/skel/.config/nvim/lua/config/remote_clipboard.lua"
+if vim.uv.fs_stat(omarchy_clipboard) then
+  dofile(omarchy_clipboard).setup()
+end

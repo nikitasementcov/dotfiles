@@ -6,3 +6,6 @@ debug
 foo.*
 *.log
 data
+
+# Omarchy theme symlink, created by lua/config/lazy.lua
+lua/plugins/theme.lua
