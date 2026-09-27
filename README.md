@@ -42,7 +42,7 @@ How the layering works:
 - `bash/.bashrc` is Omarchy's template: it sources `$OMARCHY_PATH/default/bash/rc` (starship, mise, zoxide, aliases), then `~/.config/shell/common.sh`, which is shared with `zsh/.zshrc`.
 - `tmux/.tmux.conf` first sources Omarchy's `~/.config/tmux/tmux.conf` (tmux loads only the first config it finds), then applies my overrides. The `tmux-power` theme only loads on macOS.
 - `herdr/.config/herdr/config.toml` is Omarchy's herdr config merged with my keys, because herdr has no includes. Validate it with `herdr config check`.
-- The `LazyVim` profile loads Omarchy's Neovim extras from the `omarchy-nvim` package (`/etc/skel/.config/nvim`): live theme reload on `omarchy-theme-set`, all theme plugins (from the package's bundled copies), transparent background, and the wl-copy/OSC52 clipboard inside tmux, herdr and ssh. `lua/config/lazy.lua` creates a gitignored `lua/plugins/theme.lua` symlink to the current theme. All of this is skipped on macOS. On Omarchy, `lazy-lock.json` drops the theme plugins it loads from the package (such as tokyonight), so expect that diff.
+- The `LazyVim` profile loads Omarchy's Neovim extras from the `omarchy-nvim` package (`/etc/skel/.config/nvim`): live theme reload on `omarchy-theme-set`, all theme plugins, transparent background, and the wl-copy/OSC52 clipboard inside tmux, herdr and ssh. `lua/config/lazy.lua` creates a gitignored `lua/plugins/theme.lua` symlink to the current theme. All of this is skipped on macOS. The theme plugins are cloned normally and are pinned in `lazy-lock.json`.
 - Omarchy's `~/.config/git/config` still applies, and `~/.gitconfig` overrides it.
 
 ## Repo Shape
