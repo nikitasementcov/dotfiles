@@ -5,7 +5,7 @@
 - Preserve separate Neovim app profiles. `LazyVim` and `NvChad` stow to `~/.config/LazyVim` and `~/.config/NvChad`, not `~/.config/nvim`.
 - For profile-specific Neovim checks, use the configured aliases such as `nvim-chad`, `nvim-lazy`, or `nvim-default` instead of assuming the default `nvim` profile.
 - Do not claim `extras.sh` installs real tools unless guarded install blocks have been added.
-- Do not run bootstrap scripts such as `install.sh`, `brew.sh`, `asdf.sh`, `pnpm-globals.sh`, `claude.sh`, `extras.sh`, or `macos.sh` for verification unless explicitly asked; they install packages, modify shells, or change system settings.
+- Do not run bootstrap scripts such as `install.sh`, `brew.sh`, `asdf.sh`, `arch.sh`, `mise.sh`, `pnpm-globals.sh`, `claude.sh`, `extras.sh`, or `macos.sh` for verification unless explicitly asked; they install packages, modify shells, or change system settings.
 - For shell edits, run `bash -n <script>.sh` where applicable.
 - For Lua/Neovim edits, follow the local formatting conventions: LazyVim `stylua.toml` and NvChad `.stylua.toml` both use 2-space indentation and 120-column width.
 - Preserve `.gitignore` exceptions for `claude/.claude/**`; otherwise nested dotfiles under stowed packages can be accidentally ignored.
