@@ -1,25 +1,28 @@
 # Herdr config — https://herdr.dev
 # Run `herdr --default-config` to see every available option with docs.
+#
+# Based on Omarchy's herdr config (which mirrors its tmux config: tmux session ->
+# herdr workspace, window -> tab, pane -> pane) with my old tmux muscle memory on
+# top. herdr has no include mechanism, so Omarchy's settings are merged in here.
+# Validate with `herdr config check`.
 
 onboarding = false
 
 [theme]
+# tmux ran on the terminal's own palette, so this follows the Omarchy theme
 name = "terminal"
 auto_switch = false
+
+[theme.custom]
+# The active tab is drawn as panel_bg text on an accent background, so panel_bg
+# has to be dark for it to read
+panel_bg = "black"
 
 [terminal]
 # New panes/tabs/workspaces inherit the current pane's cwd,
 # like tmux's `bind c new-window -c "#{pane_current_path}"`.
 new_cwd = "follow"
 
-[ui]
-# Mouse support (like tmux's `set -g mouse on`)
-mouse_capture = true
-# Mouse selection copies immediately, like the old copy-mode-vi
-# MouseDragEnd1Pane binding that ran `tmux save-buffer | xclip`.
-copy_on_select = true
-
-agent_panel_sort = "priority"
 [keys]
 prefix = "ctrl+b"
 
@@ -27,20 +30,79 @@ prefix = "ctrl+b"
 goto = "prefix+s"
 settings = "prefix+g"
 
-# Pane navigation already defaults to prefix+h/j/k/l, matching
-# vim-tmux-navigator, so nothing to add there.
-# resize_mode (prefix+r) is the analog of the old `bind -r h/j/k/l resize-pane`
-# repeatable resize bindings.
+# Config and help
+reload_config = "prefix+q"
+help = "prefix+?"
+detach = "prefix+d"
 
+# Copy mode
+copy_mode = "prefix+["
+
+# Panes
+# Side-by-side split. Closest match to the old `bind | split-window -h`;
+# herdr doesn't support "|" as a bindable key, so this stays on prefix+v.
+split_vertical = ["prefix+v", "alt+shift+enter"]
+# Stacked split, same key as the old `bind - split-window -v`.
+split_horizontal = ["prefix+minus", "alt+enter"]
+close_pane = ["prefix+x", "alt+esc"]
 # Old tmux config rebound full-screen toggle from tmux's default "z" to "m"
 # (`bind -r m resize-pane -Z`); keep that muscle memory.
 zoom = "prefix+m"
+last_pane = "prefix+;"
 
-# Side-by-side split. Closest match to the old `bind | split-window -h`;
-# herdr doesn't support "|" as a bindable key, so this stays on the default.
-split_vertical = "prefix+v"
-# Stacked split, same key as the old `bind - split-window -v`.
-split_horizontal = "prefix+minus"
+# prefix+h/j/k/l like vim-tmux-navigator, plus Omarchy's ctrl+alt+arrows
+focus_pane_left = ["prefix+h", "ctrl+alt+left"]
+focus_pane_down = ["prefix+j", "ctrl+alt+down"]
+focus_pane_up = ["prefix+k", "ctrl+alt+up"]
+focus_pane_right = ["prefix+l", "ctrl+alt+right"]
+
+# Analog of the old `bind -r h/j/k/l resize-pane` repeatable resize bindings
+resize_mode = ["prefix+ctrl+left", "prefix+ctrl+down", "prefix+ctrl+up", "prefix+ctrl+right"]
+resize_pane_left = "ctrl+alt+shift+left"
+resize_pane_down = "ctrl+alt+shift+down"
+resize_pane_up = "ctrl+alt+shift+up"
+resize_pane_right = "ctrl+alt+shift+right"
+
+# herdr's default prefix+shift+p is taken by previous workspace
+rename_pane = "prefix+shift+o"
+
+# Windows -> tabs
+new_tab = "prefix+c"
+rename_tab = "prefix+r"
+# herdr default; Omarchy's prefix+k is used by focus_pane_up above
+close_tab = "prefix+shift+x"
+switch_tab = ["prefix+1..9", "alt+1..9"]
+previous_tab = ["prefix+p", "alt+left"]
+next_tab = ["prefix+n", "alt+right"]
+move_tab_previous = "alt+shift+left"
+move_tab_next = "alt+shift+right"
+
+# Sessions -> workspaces
+new_workspace = "prefix+shift+c"
+rename_workspace = "prefix+shift+r"
+close_workspace = "prefix+shift+k"
+previous_workspace = ["prefix+shift+p", "alt+up"]
+next_workspace = ["prefix+shift+n", "alt+down"]
+
+[ui]
+accent = "blue"
+pane_gaps = false
+pane_outer_borders = false
+pane_scrollbars = false
+confirm_close = false
+prompt_new_tab_name = false
+
+# Mouse support (like tmux's `set -g mouse on`)
+mouse_capture = true
+# Mouse selection copies immediately, like the old copy-mode-vi
+# MouseDragEnd1Pane binding that ran `tmux save-buffer | xclip`.
+copy_on_select = true
+
+agent_panel_sort = "priority"
+
+tab_bar_right = [{ type = "zoom" }, { type = "hostname" }]
+# What Hyprland shows in the group bar
+window_title = "{hostname}: {workspace}"
 
 [session]
 # Resume agent panes into their sessions after a server restart,
